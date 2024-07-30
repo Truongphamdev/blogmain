@@ -1,0 +1,33 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'style.css' %}">
+    <title>
+        {% block title %}{% endblock  %}
+    </title>
+    {% block link_css %}{% endblock  %}
+    <header id="main-navigation">
+        <h1>
+            <a href="{% url 'start-page' %} ">Truongpro Blog</a>
+        </h1>
+        <h2 class='add'>
+            <a href="{% url 'add-post' %}"><button> Add Post </button></a>
+        </h2>
+        <nav>
+            <a href="{% url 'posts-page' %}">
+                All Posts
+            </a>
+            <a href="{% url 'read-later' %}">
+                Stored Posts
+            </a>
+        </nav>
+    </header>
+</head>
+<body>
+    {% block content %}
+    {% endblock  %}
+</body>
+</html>
